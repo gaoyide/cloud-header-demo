@@ -1,0 +1,19 @@
+server:
+  port: 11100
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 500MB
+  application:
+    name: produce-demo
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:2100/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
